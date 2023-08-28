@@ -1,9 +1,16 @@
 <?php
 
-        // mostrar errores
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
+    require '../includes/funciones.php';
+    $auth = estaAutenticado();
+
+    if(!$auth){
+        header('Location: /');
+    }
+
+    // mostrar errores
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
     //Importar la conexion
     require '../includes/config/database.php';
@@ -41,7 +48,6 @@
     }
 
     //Incluye un template
-    require '../includes/funciones.php';
     incluirTemplate('header');
 ?>
 

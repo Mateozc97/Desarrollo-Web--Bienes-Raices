@@ -1,5 +1,12 @@
 <?php
 
+    require '../../includes/funciones.php';
+    $auth = estaAutenticado();
+
+    if(!$auth){
+    header('Location: /');
+}
+
     // mostrar errores
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -119,7 +126,6 @@
 
     }
 
-    require '../../includes/funciones.php';
     incluirTemplate('header');
 ?>
 
